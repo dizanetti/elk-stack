@@ -1,5 +1,6 @@
 package com.example.elkstack.controller;
 
+import com.example.elkstack.controller.entity.Person;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -21,13 +22,15 @@ public class PersonController {
     @Operation(summary = "API that return a person by idNumber")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Found a person", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = String.class)) }),
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) }),
             @ApiResponse(responseCode = "400", description = "Un error with the request occurred", content = @Content),
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content)})
-    public ResponseEntity<?> getPerson(@RequestParam Long idNumber) {
+    public ResponseEntity<Person> getPerson(@RequestParam Long idNumber) {
         log.info("Returning person: {}", idNumber);
+        Person person = new Person(1L, "Diego Zanetti");
 
-        return ResponseEntity.ok("{\"name\": \"Diego Zanetti\"}");
+        log.info("Response: {}", person);
+        return ResponseEntity.ok(person);
     }
 
     @DeleteMapping
