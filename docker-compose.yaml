@@ -82,6 +82,14 @@ services:
       - 'logs_data:/logs'
     ports:
       - '8081:8081'
+  
+  elk-vendor:
+    container_name: ms-service-2
+    build: ./elk-vendor
+    volumes:
+      - 'logs_data:/logs'
+    ports:
+      - '8082:8082'
     
 volumes:
   es_data:
