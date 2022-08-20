@@ -73,7 +73,7 @@ services:
     networks:
       - elastic
     depends_on:
-      - elasticsearch
+      - logstash
   
   elk-stack:
     container_name: ms-service-1
