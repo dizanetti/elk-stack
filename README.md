@@ -2,6 +2,8 @@
 
 The purpose of this project is to simulate an environment of microservices that centralize the logs in the ELK for further analysis.
 
+For this project i will use Spring boot for micro services, Docker compose for orchestrate and configuration.
+
 What is ELK?
 
 ELK took its place very quickly in the world of logs and metrics, mainly because it is open-source and highly scalable. Together they form a powerful data analysis platform.
@@ -48,7 +50,5 @@ Kibana is a free and open user interface for you to visualize your Elasticsearch
 A picture is worth a thousand log lines
 
 Kibana gives you the freedom to select the way you shape your data. With interactive visualizations, start with a question and see where it takes you.
-
-For this project i will use Spring boot for micro services, Docker compose for orchestrate and configuration.
 
 ![Arch](images/arch.png)
